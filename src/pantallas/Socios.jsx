@@ -14,7 +14,7 @@ function Socios({ usuario, onVolver }) {
 
 
   // =========================
-  // LISTAR SOCIOS
+  // LISTAR SOCIOS - FINALIDAD DE LA PÁGINA
   // GET /gimnasio
   // =========================
 
