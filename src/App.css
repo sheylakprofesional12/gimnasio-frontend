@@ -1,0 +1,1327 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =========================
+   LOGIN
+   ========================= */
+
+.login-pagina {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 35px;
+
+  background-color: #f4f9fd;
+}
+
+.login-contenedor {
+  width: 100%;
+  max-width: 950px;
+  min-height: 600px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  overflow: hidden;
+
+  background-color: #ffffff;
+
+  border: 1px solid #dbeaf5;
+  border-radius: 16px;
+
+  box-shadow:
+    0 15px 40px rgba(37, 99, 166, 0.13);
+}
+
+/* IMAGEN */
+
+/* =========================
+   LADO IZQUIERDO DEL LOGIN
+   ========================= */
+
+.login-imagen {
+  position: relative;
+
+  min-height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 45px;
+
+  text-align: center;
+
+  background: linear-gradient(
+    145deg,
+    #2563a6,
+    #3b82c4
+  );
+
+  overflow: hidden;
+}
+
+/* IMAGEN DEL GIMNASIO */
+
+.login-imagen {
+  width: 100%;
+  min-height: 620px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px;
+  box-sizing: border-box;
+
+  background-color: #2f73b9;
+}
+
+.login-imagen img {
+  width: 100%;
+  height: auto;
+  max-height: 550px;
+
+  display: block;
+
+  object-fit: contain;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* QUITAMOS LA CAPA OSCURA ANTERIOR */
+
+.login-imagen::after {
+  display: none;
+}
+
+/* TEXTO */
+
+.login-imagen-texto {
+  position: static;
+
+  color: #ffffff;
+
+  z-index: 1;
+}
+
+.login-imagen-texto h2 {
+  margin-bottom: 10px;
+
+  color: #ffffff;
+
+  font-size: 30px;
+}
+
+.login-imagen-texto p {
+  margin: 0;
+
+  color: #eaf4fb;
+
+  font-size: 15px;
+}
+
+/* PANEL DERECHO */
+
+.login-panel {
+  padding: 45px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-marca {
+  text-align: center;
+
+  margin-bottom: 25px;
+}
+
+.logo-gym {
+  width: 65px;
+  height: 65px;
+
+  margin: 0 auto 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #2563a6;
+  color: #ffffff;
+
+  border-radius: 14px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  letter-spacing: 1px;
+}
+
+.login-marca h1 {
+  margin-bottom: 5px;
+
+  color: #173b5e;
+
+  font-size: 30px;
+}
+
+.login-marca p {
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+/* TARJETA */
+
+.login-card {
+  width: 100%;
+
+  padding: 30px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #dbeaf5;
+  border-radius: 10px;
+
+  box-shadow:
+    0 5px 18px rgba(37, 99, 166, 0.06);
+}
+
+.login-card h2 {
+  margin-bottom: 7px;
+
+  text-align: center;
+
+  color: #173b5e;
+
+  font-size: 23px;
+}
+
+.login-descripcion {
+  margin-bottom: 25px;
+
+  text-align: center;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+/* CAMPOS */
+
+.login-card .campo {
+  margin-bottom: 18px;
+}
+
+.login-card .campo label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #374151;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-card .campo input {
+  width: 100%;
+
+  padding: 12px 13px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+
+  color: #1f2937;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.login-card .campo input:focus {
+  outline: none;
+
+  border-color: #3b82c4;
+
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 196, 0.14);
+}
+
+.login-card .campo input::placeholder {
+  color: #9ca3af;
+}
+
+/* BOTÓN */
+
+.boton-login {
+  width: 100%;
+
+  padding: 12px;
+
+  margin-top: 5px;
+
+  background-color: #2563a6;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.boton-login:hover {
+  background-color: #3b82c4;
+
+  box-shadow:
+    0 4px 12px rgba(37, 99, 166, 0.22);
+}
+
+/* MENSAJE */
+
+.mensaje-login {
+  margin-top: 18px;
+
+  padding: 11px;
+
+  text-align: center;
+
+  background-color: #fef2f2;
+  color: #991b1b;
+
+  border-radius: 6px;
+
+  font-size: 14px;
+}
+
+/* PIE */
+
+.login-footer {
+  margin-top: 25px;
+  padding-top: 18px;
+
+  text-align: center;
+
+  border-top: 1px solid #e5e7eb;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .login-pagina {
+    padding: 20px;
+  }
+
+  .login-contenedor {
+    max-width: 450px;
+
+    display: block;
+
+    min-height: auto;
+  }
+
+  .login-imagen {
+    display: none;
+  }
+
+  .login-panel {
+    padding: 30px;
+  }
+
+  .login-card {
+    padding: 25px;
+  }
+}
+
+/* =========================
+   HOME - PANEL PRINCIPAL
+   ========================= */
+
+.home-pagina {
+  min-height: 100vh;
+  background-color: #f4f9fd;
+}
+
+/* ENCABEZADO */
+
+.home-encabezado {
+  min-height: 76px;
+  padding: 14px max(32px, calc((100% - 1150px) / 2));
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #2563a6;
+  color: #ffffff;
+
+  box-shadow: 0 3px 12px rgba(37, 99, 166, 0.18);
+}
+
+/* MARCA */
+
+.home-marca {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.home-logo {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(255, 255, 255, 0.15);
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 9px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.home-marca h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 22px;
+}
+
+.home-marca span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #eaf4fb;
+
+  font-size: 12px;
+}
+
+/* USUARIO */
+
+.home-usuario {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.home-usuario div {
+  display: flex;
+  flex-direction: column;
+
+  text-align: right;
+}
+
+.home-usuario div span {
+  color: #eaf4fb;
+
+  font-size: 11px;
+}
+
+.home-usuario strong {
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+.home-rol {
+  padding: 6px 11px;
+
+  background-color: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* CONTENIDO */
+
+.home-contenedor {
+  width: 100%;
+  max-width: 1150px;
+
+  margin: 0 auto;
+
+  padding: 38px 25px;
+}
+
+/* BIENVENIDA */
+
+.home-bienvenida {
+  padding: 30px;
+
+  margin-bottom: 32px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #dbeaf5;
+  border-left: 5px solid #3b82c4;
+  border-radius: 10px;
+
+  box-shadow: 0 5px 18px rgba(37, 99, 166, 0.07);
+}
+
+.home-etiqueta {
+  margin-bottom: 8px;
+
+  color: #2563a6;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  letter-spacing: 1px;
+}
+
+.home-bienvenida h2 {
+  margin-bottom: 10px;
+
+  color: #173b5e;
+
+  font-size: 27px;
+}
+
+.home-bienvenida p:last-child {
+  color: #64748b;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+/* TÍTULO DE MÓDULOS */
+
+.home-titulo-opciones {
+  margin-bottom: 16px;
+
+  color: #173b5e;
+
+  font-size: 19px;
+}
+
+/* MÓDULOS */
+
+.home-modulos {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 20px;
+
+  margin-bottom: 35px;
+}
+
+.home-modulo {
+  display: flex;
+
+  gap: 20px;
+
+  padding: 26px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #dbeaf5;
+  border-radius: 10px;
+
+  box-shadow: 0 5px 18px rgba(37, 99, 166, 0.06);
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.home-modulo:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 24px rgba(37, 99, 166, 0.12);
+}
+
+/* ICONO */
+
+.home-icono {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #eaf4fb;
+
+  color: #2563a6;
+
+  border-radius: 9px;
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.home-modulo-contenido {
+  flex: 1;
+}
+
+.home-modulo h3 {
+  margin-bottom: 8px;
+
+  color: #173b5e;
+
+  font-size: 19px;
+}
+
+.home-modulo p {
+  margin-bottom: 20px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+/* BOTÓN GESTIONAR SOCIOS */
+
+.home-boton-principal {
+  padding: 11px 19px;
+
+  background-color: #2563a6;
+
+  color: #ffffff;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+
+.home-boton-principal:hover {
+  background-color: #3b82c4;
+
+  box-shadow:
+    0 4px 12px rgba(37, 99, 166, 0.22);
+
+  transform: translateY(-1px);
+}
+
+/* PIE */
+
+.home-pie {
+  padding-top: 22px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid #dbeaf5;
+}
+
+.home-pie span {
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+/* CERRAR SESIÓN */
+
+.home-boton-salir {
+  padding: 10px 17px;
+
+  background-color: #ffffff;
+
+  color: #2563a6;
+
+  border: 1px solid #9fc5e2;
+  border-radius: 6px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+.home-boton-salir:hover {
+  background-color: #eaf4fb;
+
+  border-color: #3b82c4;
+}
+
+/* =========================
+   GESTIÓN DE SOCIOS
+   YANFITNESS
+   ========================= */
+
+.socios-pagina {
+  min-height: 100vh;
+  background-color: #eef6ff;
+}
+
+/* ENCABEZADO */
+
+.socios-encabezado {
+  min-height: 72px;
+  padding: 14px max(32px, calc((100% - 1150px) / 2));
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(
+    90deg,
+    #1f5f9f,
+    #347fc5
+  );
+
+  color: #ffffff;
+
+  box-shadow: 0 3px 12px rgba(47, 115, 185, 0.18);
+}
+
+.socios-encabezado h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.socios-usuario {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* CONTENIDO */
+
+.socios-contenedor {
+  max-width: 1150px;
+  margin: 32px auto;
+  padding: 0 24px;
+}
+
+.socios-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.socios-cabecera h2 {
+  margin-bottom: 6px;
+
+  color: #174a7e;
+
+  font-size: 28px;
+}
+
+.socios-cabecera p {
+  color: #64748b;
+}
+
+
+/* TARJETAS */
+
+.socios-tarjeta,
+.socios-pagina .tarjeta {
+  background-color: #ffffff;
+
+  border: 1px solid #d7e6f5;
+  border-radius: 12px;
+
+  padding: 26px;
+
+  margin-bottom: 25px;
+
+  box-shadow:
+    0 5px 18px rgba(47, 115, 185, 0.08);
+}
+
+.socios-tarjeta h3,
+.socios-pagina .tarjeta h3 {
+  color: #174a7e;
+  margin-bottom: 22px;
+}
+
+
+/* FORMULARIO */
+
+.socios-pagina .campo label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #334155;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.socios-pagina .campo input,
+.socios-pagina .campo select {
+  width: 100%;
+
+  padding: 11px 12px;
+
+  border: 1px solid #bfd2e5;
+  border-radius: 7px;
+
+  background-color: #ffffff;
+
+  color: #1e293b;
+
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+.socios-pagina .campo input:focus,
+.socios-pagina .campo select:focus {
+  outline: none;
+
+  border-color: #347fc5;
+
+  box-shadow:
+    0 0 0 3px rgba(52, 127, 197, 0.13);
+}
+
+
+/* BOTÓN PRINCIPAL */
+
+.socios-pagina .boton-principal {
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 7px;
+
+  background-color: #2f73b9;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.socios-pagina .boton-principal:hover {
+  background-color: #245f9d;
+
+  box-shadow:
+    0 4px 10px rgba(47, 115, 185, 0.20);
+}
+
+
+/* BOTÓN SECUNDARIO */
+
+.socios-pagina .boton-secundario {
+  padding: 9px 16px;
+
+  border: 1px solid #2f73b9;
+  border-radius: 7px;
+
+  background-color: #ffffff;
+  color: #2f73b9;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.socios-pagina .boton-secundario:hover {
+  background-color: #e8f3ff;
+}
+
+
+/* TABLA */
+
+.socios-pagina .tabla-contenedor {
+  overflow-x: auto;
+}
+
+.socios-pagina table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  margin-top: 10px;
+}
+
+.socios-pagina th {
+  padding: 13px 12px;
+
+  background-color: #e8f3ff;
+
+  color: #174a7e;
+
+  text-align: left;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  border-bottom: 2px solid #bfd8ee;
+}
+
+.socios-pagina td {
+  padding: 13px 12px;
+
+  color: #334155;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.socios-pagina tbody tr:hover {
+  background-color: #f5faff;
+}
+
+
+/* ACCIONES */
+
+.socios-pagina .acciones {
+  display: flex;
+  gap: 7px;
+}
+
+.socios-pagina .boton-editar {
+  padding: 7px 12px;
+
+  border: 1px solid #2f73b9;
+  border-radius: 6px;
+
+  background-color: #ffffff;
+  color: #2f73b9;
+
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.socios-pagina .boton-editar:hover {
+  background-color: #e8f3ff;
+}
+
+.socios-pagina .boton-estado {
+  padding: 7px 12px;
+
+  border: none;
+  border-radius: 6px;
+
+  background-color: #2f73b9;
+  color: #ffffff;
+
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.socios-pagina .boton-estado:hover {
+  background-color: #245f9d;
+}
+
+
+/* ESTADO DEL SOCIO */
+
+.socios-pagina .estado {
+  display: inline-block;
+
+  padding: 5px 11px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.socios-pagina .estado.activo {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.socios-pagina .estado.inactivo {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+
+/* MENSAJES */
+
+.socios-pagina .mensaje {
+  margin: 15px 0;
+
+  padding: 11px 14px;
+
+  background-color: #e8f3ff;
+  color: #174a7e;
+
+  border-left: 4px solid #2f73b9;
+  border-radius: 6px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .socios-cabecera {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .socios-contenedor {
+    padding: 0 16px;
+  }
+
+  .socios-encabezado {
+    padding: 14px 20px;
+  }
+
+  .socios-pagina .acciones {
+    flex-direction: column;
+  }
+}
+
+/* ========================================
+   NUEVO LOGIN YANFITNESS
+   ======================================== */
+
+.login-pagina {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+
+  background-color: #edf5fc;
+}
+
+.login-contenedor {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 620px;
+
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+
+  background-color: #ffffff;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 40px rgba(15, 39, 71, 0.15);
+}
+
+
+/* IMAGEN IZQUIERDA */
+
+.login-imagen {
+  width: 100%;
+  min-height: 620px;
+
+  background-color: #06101f;
+
+  overflow: hidden;
+}
+
+.login-imagen img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* FORMULARIO DERECHO */
+
+.login-formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 45px;
+}
+
+
+/* MARCA */
+
+.login-marca {
+  text-align: center;
+
+  margin-bottom: 22px;
+}
+
+.logo-gym {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 15px;
+
+  border-radius: 14px;
+
+  background-color: #2f73b9;
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.login-marca h1 {
+  margin: 0 0 6px;
+
+  color: #123a63;
+
+  font-size: 30px;
+}
+
+.login-marca p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* TARJETA */
+
+.login-card {
+  width: 100%;
+
+  padding: 0;
+
+  border: none;
+  box-shadow: none;
+
+  background-color: transparent;
+}
+
+.login-card h2 {
+  margin-bottom: 8px;
+
+  text-align: center;
+
+  color: #123a63;
+
+  font-size: 24px;
+}
+
+.login-descripcion {
+  margin-bottom: 28px;
+
+  text-align: center;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* CAMPOS */
+
+.login-card .campo {
+  margin-bottom: 20px;
+}
+
+.login-card .campo label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #1e293b;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-card .campo input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 13px 14px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+
+  background-color: #ffffff;
+
+  font-size: 15px;
+}
+
+.login-card .campo input:focus {
+  outline: none;
+
+  border-color: #2f73b9;
+
+  box-shadow:
+    0 0 0 3px rgba(47, 115, 185, 0.15);
+}
+
+
+/* BOTÓN */
+
+.boton-login {
+  width: 100%;
+
+  padding: 13px;
+
+  margin-top: 5px;
+
+  border: none;
+  border-radius: 7px;
+
+  background-color: #2f73b9;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.boton-login:hover {
+  background-color: #245f9d;
+}
+
+
+/* MENSAJE */
+
+.mensaje-login {
+  margin-top: 18px;
+
+  padding: 11px;
+
+  border-radius: 6px;
+
+  background-color: #fef2f2;
+  color: #991b1b;
+
+  text-align: center;
+}
+
+
+/* FOOTER */
+
+.login-footer {
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e2e8f0;
+
+  text-align: center;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+  .login-contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .login-imagen {
+    min-height: 280px;
+  }
+
+  .login-formulario {
+    padding: 35px 25px;
+  }
+
+}
+
+/* LOGO YANFITNESS */
+
+.login-logo-texto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 7px;
+
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo-yan {
+  color: #2f73b9;
+}
+
+.logo-fitness {
+  color: #123a63;
+}
+
+.login-marca p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}

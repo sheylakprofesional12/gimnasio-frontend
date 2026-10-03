@@ -1,0 +1,16 @@
+# NIVEL 3 · Base de datos + backend + frontend (como producción)
+# Uso: docker compose -f nivel3-full.yml up -d --build
+# En tu PC corres: nada. Abre http://localhost:3000
+
+include:
+  - ../../gimnasio-api-backend/docker-compose.yml # <-- Sube a downloads y entra a gimnasio-backend
+
+services:
+  frontend:
+    container_name: core_gimnasio_frontend
+    build: . # carpeta donde está el Dockerfile del frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80" # nginx escucha en el 80 dentro del contenedor
+    depends_on:
+      - app
