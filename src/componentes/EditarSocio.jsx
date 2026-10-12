@@ -12,9 +12,7 @@ function EditarSocio({ socio, usuario, onActualizado, onCancelar }) {
 
     try {
 
-      const respuesta = await fetch(
-        `http://localhost:8080/gimnasio/${socio.id}`,
-        {
+      const respuesta = await fetch(`/api/gimnasio/${socio.id}`, {
           method: "PUT",
 
           headers: {
@@ -37,9 +35,14 @@ function EditarSocio({ socio, usuario, onActualizado, onCancelar }) {
 
       } else {
 
-        setMensaje("No se pudo actualizar el socio.");
+  const detalle = await respuesta.text();
 
-      }
+  console.error("Estado HTTP:", respuesta.status);
+  console.error("Respuesta del backend:", detalle);
+
+  setMensaje(`No se pudo actualizar el socio. Error ${respuesta.status}`);
+
+}
 
     } catch (error) {
 

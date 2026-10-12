@@ -11,19 +11,19 @@ function Login({ onLogin }) {
 
     try {
 
-      const respuesta = await fetch(
-        "http://localhost:8080/auth/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            username,
-            password
-          })
-        }
-      );
+     const respuesta = await fetch(
+  "/api/auth/login",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      username,
+      password
+    })
+  }
+);
 
       const datos = await respuesta.json();
 

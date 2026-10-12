@@ -17,9 +17,7 @@ function FormularioSocio({ usuario, onSocioRegistrado }) {
 
     try {
 
-      const respuesta = await fetch(
-        "http://localhost:8080/gimnasio",
-        {
+      const respuesta = await fetch("/api/gimnasio", {
           method: "POST",
 
           headers: {

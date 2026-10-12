@@ -1,8 +1,10 @@
 import { useState } from "react";
 import EditarSocio from "../componentes/EditarSocio";
 import FormularioSocio from "../componentes/FormularioSocio";
+import DetalleSocio from "../componentes/DetalleSocio";
+import MenuUsuario from "../componentes/MenuUsuario";
 
-function Socios({ usuario, onVolver }) {
+function Socios({ usuario, onVolver, onCerrarSesion }) {
 
   // =========================
   // ESTADOS
@@ -11,6 +13,7 @@ function Socios({ usuario, onVolver }) {
   const [socios, setSocios] = useState([]);
   const [mensaje, setMensaje] = useState("");
   const [socioSeleccionado, setSocioSeleccionado] = useState(null);
+  const [socioDetalle, setSocioDetalle] = useState(null);
 
 
   // =========================
@@ -23,7 +26,7 @@ function Socios({ usuario, onVolver }) {
     try {
 
       const respuesta = await fetch(
-        "http://localhost:8080/gimnasio",
+        "/api/gimnasio",
         {
           method: "GET",
           headers: {
@@ -60,35 +63,125 @@ function Socios({ usuario, onVolver }) {
   // PATCH /gimnasio/{id}/estado
   // =========================
 
-  const cambiarEstado = async (socio) => {
+  
+const cambiarEstado = async (socio) => {
+  try {
+    const respuesta = await fetch(`/api/gimnasio/${socio.id}/estado`, {
+      method: "PATCH",
+
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${usuario.token}`
+      },
+
+      body: JSON.stringify({
+        activo: !socio.activo
+      })
+    });
+
+    if (respuesta.ok) {
+      setMensaje("Estado actualizado correctamente.");
+      listarSocios();
+    } else {
+      const detalle = await respuesta.text();
+
+      console.error("Error HTTP:", respuesta.status);
+      console.error("Respuesta del backend:", detalle);
+
+      setMensaje(`No se pudo cambiar el estado. Error ${respuesta.status}`);
+    }
+
+  } catch (error) {
+    console.error(error);
+    setMensaje("Error de conexión con el servidor.");
+  }
+};
+
+
+
+
+  // =========================
+  // VER DETALLE DEL SOCIO
+  // GET /gimnasio/{id}
+  // =========================
+
+  const verDetalleSocio = async (id) => {
+    try {
+      setMensaje("");
+
+      const respuesta = await fetch(`/api/gimnasio/${id}`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${usuario.token}`
+        }
+      });
+
+      if (respuesta.ok) {
+        const datos = await respuesta.json();
+
+        setSocioSeleccionado(null);
+        setSocioDetalle(datos);
+      } else {
+        setMensaje(
+          `No se pudo consultar el socio. Error ${respuesta.status}`
+        );
+      }
+
+    } catch (error) {
+      console.error(error);
+      setMensaje("Error de conexión con el servidor.");
+    }
+  };
+
+
+  // =========================
+  // ELIMINAR SOCIO - SOLO ADMIN
+  // DELETE /gimnasio/{id}
+  // =========================
+
+  const eliminarSocio = async (socio) => {
+
+    if (usuario.rol !== "ADMIN") {
+      setMensaje("No tienes permisos para eliminar socios.");
+      return;
+    }
+
+    const confirmar = window.confirm(
+      `¿Estás seguro de eliminar al socio ${socio.nombre} ${socio.apellido}?`
+    );
+
+    if (!confirmar) return;
 
     try {
 
       const respuesta = await fetch(
-        `http://localhost:8080/gimnasio/${socio.id}/estado`,
+        `/api/gimnasio/${socio.id}`,
         {
-          method: "PATCH",
-
+          method: "DELETE",
           headers: {
-            "Content-Type": "application/json",
             Authorization: `Bearer ${usuario.token}`
-          },
-
-          body: JSON.stringify({
-            activo: !socio.activo
-          })
+          }
         }
       );
 
       if (respuesta.ok) {
 
-        setMensaje("Estado actualizado correctamente.");
+        setSocioSeleccionado(null);
+        setSocioDetalle(null);
 
-        listarSocios();
+        await listarSocios();
+
+        setMensaje("Socio eliminado correctamente.");
 
       } else {
 
-        setMensaje("No se pudo cambiar el estado del socio.");
+        const detalle = await respuesta.text();
+
+        console.error("Error al eliminar:", detalle);
+
+        setMensaje(
+          `No se pudo eliminar el socio. Error ${respuesta.status}`
+        );
 
       }
 
@@ -112,15 +205,34 @@ function Socios({ usuario, onVolver }) {
 
       {/* ENCABEZADO */}
 
+      
       <header className="socios-encabezado">
 
-        <h1>JYM GYM</h1>
+        <button
+          type="button"
+          className="logo-enlace"
+          onClick={onVolver}
+          title="Volver al inicio"
+        >
+          YANFITNESS
+        </button>
 
-        <div className="socios-usuario">
-          {usuario.username} | {usuario.rol}
+        <div className="home-usuario">
+
+          <div>
+            <span>Usuario</span>
+            <strong>{usuario.username}</strong>
+          </div>
+
+          <MenuUsuario
+            usuario={usuario}
+            onCerrarSesion={onCerrarSesion}
+          />
+
         </div>
 
       </header>
+
 
 
       {/* CONTENIDO PRINCIPAL */}
@@ -190,6 +302,17 @@ function Socios({ usuario, onVolver }) {
 
         )}
 
+
+        {/* =========================
+            DETALLE DEL SOCIO
+            ========================= */}
+
+        {socioDetalle && (
+          <DetalleSocio
+            socio={socioDetalle}
+            onVolver={() => setSocioDetalle(null)}
+          />
+        )}
 
         {/* =========================
             LISTADO DE SOCIOS
@@ -342,6 +465,14 @@ function Socios({ usuario, onVolver }) {
 
                         <div className="acciones">
 
+                      {/* VER DETALLE */}
+
+                      <button
+                        className="boton-secundario"
+                        onClick={() => verDetalleSocio(socio.id)}
+                      >
+                        Ver detalle
+                      </button>
 
                           {/* EDITAR */}
 
@@ -369,6 +500,20 @@ function Socios({ usuario, onVolver }) {
                               : "Activar"}
 
                           </button>
+
+
+                          
+                          {/* ELIMINAR - SOLO ADMIN */}
+
+                          {usuario.rol === "ADMIN" && (
+                            <button
+                              className="boton-eliminar"
+                              onClick={() => eliminarSocio(socio)}
+                            >
+                              Eliminar
+                            </button>
+                          )}
+
 
 
                         </div>

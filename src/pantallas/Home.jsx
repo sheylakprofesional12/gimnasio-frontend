@@ -1,4 +1,5 @@
-function Home({ usuario, onSocios, onCerrarSesion }) {
+import MenuUsuario from "../componentes/MenuUsuario";
+function Home({ usuario, onSocios, onRegistrarUsuario, onReportes, onCerrarSesion }) {
 
   return (
     <div className="home-pagina">
@@ -18,18 +19,21 @@ function Home({ usuario, onSocios, onCerrarSesion }) {
 
         </div>
 
-        <div className="home-usuario">
+        
+      <div className="home-usuario">
 
-          <div>
-            <span>Usuario</span>
-            <strong>{usuario.username}</strong>
-          </div>
-
-          <span className="home-rol">
-            {usuario.rol}
-          </span>
-
+        <div>
+          <span>Usuario</span>
+          <strong>{usuario.username}</strong>
         </div>
+
+        <MenuUsuario
+        usuario={usuario}
+        onCerrarSesion={onCerrarSesion}
+        />
+
+      </div>
+
 
       </header>
 
@@ -87,22 +91,74 @@ function Home({ usuario, onSocios, onCerrarSesion }) {
 
           </div>
 
+
+{usuario.rol === "ADMIN" && (
+  <div className="home-modulo">
+
+    <div className="home-icono">
+      U
+    </div>
+
+    <div className="home-modulo-contenido">
+
+      <h3>Gestión de usuarios</h3>
+
+      <p>
+        Registre nuevos usuarios del sistema
+        y administre sus roles de acceso.
+      </p>
+
+      <button
+        className="home-boton-principal"
+        onClick={onRegistrarUsuario}
+      >
+        Registrar usuarios
+      </button>
+
+    </div>
+
+  </div>
+)}
+
+
+   
+{usuario.rol === "ADMIN" && (
+  <div className="home-modulo">
+
+    <div className="home-icono">
+      R
+    </div>
+
+    <div className="home-modulo-contenido">
+
+      <h3>Reportes</h3>
+
+      <p>
+        Consulte el total de socios, socios activos,
+        inactivos y nuevos registros del mes.
+      </p>
+
+      <button
+        type="button"
+        className="home-boton-principal"
+        onClick={onReportes}
+      >
+        Ver reportes
+      </button>
+
+    </div>
+
+  </div>
+)}
+  
+
         </section>
 
 
         <div className="home-pie">
-
           <span>
             YANFITNESS · Sistema Administrativo
           </span>
-
-          <button
-            className="home-boton-salir"
-            onClick={onCerrarSesion}
-          >
-            Cerrar sesión
-          </button>
-
         </div>
 
       </main>
