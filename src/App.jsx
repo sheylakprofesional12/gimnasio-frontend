@@ -28,16 +28,16 @@ function App() {
   };
 
   const irAReportes = () => {
-  if (usuario?.rol === "ADMIN") {
+  if (["ADMIN", "ADMINISTRADOR"].includes(usuario?.rol)) {
     setPantallaActual("reportes");
   }
-  };
+};
 
-  const irARegistrarUsuario = () => {
-    if (usuario?.rol === "ADMIN") {
-      setPantallaActual("registrarUsuario");
-    }
-  };
+ const irARegistrarUsuario = () => {
+  if (["ADMIN", "ADMINISTRADOR"].includes(usuario?.rol)) {
+    setPantallaActual("registrarUsuario");
+  }
+};
 
   const volverInicio = () => {
     setPantallaActual("inicio");
@@ -59,7 +59,10 @@ function App() {
 
 
   
-  if (pantallaActual === "reportes" && usuario.rol === "ADMIN") {
+  if (
+  pantallaActual === "reportes" &&
+  ["ADMIN", "ADMINISTRADOR"].includes(usuario?.rol)
+) {
   return (
     <Reportes
       usuario={usuario}

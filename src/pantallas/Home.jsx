@@ -1,6 +1,7 @@
 import MenuUsuario from "../componentes/MenuUsuario";
 function Home({ usuario, onSocios, onRegistrarUsuario, onReportes, onCerrarSesion }) {
-
+console.log("USUARIO COMPLETO:", usuario);
+console.log("ROL RECIBIDO:", usuario?.rol);
   return (
     <div className="home-pagina">
 
@@ -92,7 +93,7 @@ function Home({ usuario, onSocios, onRegistrarUsuario, onReportes, onCerrarSesio
           </div>
 
 
-{usuario.rol === "ADMIN" && (
+{["ADMIN", "ADMINISTRADOR"].includes(usuario.rol) && (
   <div className="home-modulo">
 
     <div className="home-icono">
@@ -122,7 +123,7 @@ function Home({ usuario, onSocios, onRegistrarUsuario, onReportes, onCerrarSesio
 
 
    
-{usuario.rol === "ADMIN" && (
+{["ADMIN", "ADMINISTRADOR"].includes(usuario.rol) && (
   <div className="home-modulo">
 
     <div className="home-icono">

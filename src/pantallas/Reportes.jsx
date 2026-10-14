@@ -38,14 +38,14 @@ function Reportes({ usuario, onVolver, onCerrarSesion }) {
   };
 
   useEffect(() => {
-    if (usuario.rol === "ADMIN") {
-      obtenerReporte();
-    }
-  }, [usuario.token, usuario.rol]);
-
-  if (usuario.rol !== "ADMIN") {
-    return <p>No tienes permisos para consultar reportes.</p>;
+  if (["ADMIN", "ADMINISTRADOR"].includes(usuario.rol)) {
+    obtenerReporte();
   }
+}, [usuario.token, usuario.rol]);
+
+  if (!["ADMIN", "ADMINISTRADOR"].includes(usuario.rol)) {
+  return <p>No tienes permisos para consultar reportes.</p>;
+}
 
   return (
     <div className="home-pagina">
