@@ -1718,3 +1718,451 @@
   object-fit: fill;
   object-position: center;
 }
+
+
+
+/* ========================================
+   YANFITNESS V2.0 - LOGIN CON IMAGEN ARRIBA
+   ======================================== */
+
+.yf2-pagina {
+  min-height: 100vh;
+  padding: 32px 16px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+    ellipse at center,
+    #102345 0%,
+    #071226 55%,
+    #030712 100%
+  );
+  font-family: Arial, sans-serif;
+}
+
+.yf2-contenedor {
+  width: 100%;
+  max-width: 480px;
+  background: #071122;
+  border: 1px solid #1d2c47;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.4);
+}
+
+.yf2-imagen {
+  width: 100%;
+  background: #071122;
+}
+
+.yf2-imagen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.yf2-formulario {
+  padding: 32px;
+  color: #ffffff;
+}
+
+.yf2-marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.yf2-logo {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: #3077ff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 8px 22px rgba(48, 119, 255, 0.3);
+}
+
+.yf2-marca h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.yf2-bienvenida {
+  margin-bottom: 28px;
+}
+
+.yf2-bienvenida h2 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.yf2-bienvenida p {
+  margin: 0;
+  color: #a4b5d2;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.yf2-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.yf2-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.yf2-campo label {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.yf2-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 49px;
+  box-sizing: border-box;
+  border: 1px solid #2c3a55;
+  border-radius: 11px;
+  background: #0b1322;
+}
+
+.yf2-input:focus-within {
+  border-color: #3077ff;
+  box-shadow: 0 0 0 3px rgba(48, 119, 255, 0.15);
+}
+
+.yf2-input svg {
+  width: 19px;
+  height: 19px;
+  margin-left: 14px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: #8da1c2;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.yf2-input input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 12px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+  box-shadow: none;
+}
+
+.yf2-input input::placeholder {
+  color: #8192af;
+}
+
+.yf2-ver {
+  margin-right: 12px;
+  padding: 4px;
+  border: none;
+  background: transparent;
+  color: #8da6d4;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.yf2-boton {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 4px;
+  border: none;
+  border-radius: 11px;
+  background: #3077ff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(48, 119, 255, 0.25);
+}
+
+.yf2-boton:hover {
+  background: #2468e8;
+}
+
+.yf2-boton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.yf2-error {
+  margin: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 70, 70, 0.1);
+  color: #ff9b9b;
+  font-size: 13px;
+  text-align: center;
+}
+
+.yf2-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #26344d;
+  color: #91a2be;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  .yf2-pagina {
+    padding: 16px 10px;
+  }
+
+  .yf2-formulario {
+    padding: 24px 20px;
+  }
+
+  .yf2-bienvenida h2 {
+    font-size: 28px;
+  }
+
+  .yf2-marca h1 {
+    font-size: 22px;
+  }
+
+  .yf2-footer {
+    font-size: 11px;
+  }
+}
+
+
+
+
+/* YANFITNESS V2.0 - AJUSTE VISUAL FINAL */
+
+.yf2-pagina {
+  background: radial-gradient(
+    ellipse at 50% 45%,
+    #0d1c3b 0%,
+    #060e20 58%,
+    #030712 100%
+  );
+}
+
+.yf2-contenedor {
+  max-width: 480px;
+  background: #050b19;
+  border: 1px solid #1a2944;
+  border-radius: 18px;
+}
+
+.yf2-formulario {
+  padding: 34px 40px 36px;
+  background: radial-gradient(
+    ellipse at 50% 45%,
+    #0d1b38 0%,
+    #050b19 85%
+  );
+}
+
+.yf2-marca {
+  margin-bottom: 38px;
+}
+
+.yf2-logo {
+  background: #3077ff;
+  box-shadow: 0 6px 24px rgba(48, 119, 255, 0.35);
+}
+
+.yf2-marca h1 {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.yf2-bienvenida {
+  margin-bottom: 32px;
+}
+
+.yf2-bienvenida h2 {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.yf2-bienvenida p {
+  color: #a1b2d0;
+  font-size: 14px;
+}
+
+.yf2-form {
+  gap: 22px;
+}
+
+.yf2-input {
+  height: 49px;
+  background: #0b1120 !important;
+  border: 1px solid #28364e;
+  border-radius: 12px;
+}
+
+.yf2-input input {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.yf2-input input:-webkit-autofill {
+  -webkit-text-fill-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0 1000px #0b1120 inset !important;
+}
+
+.yf2-recordar {
+  color: #a1b2d0;
+}
+
+.yf2-boton {
+  height: 50px;
+  background: #3077ff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(48, 119, 255, 0.28);
+}
+
+.yf2-footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #26344d;
+}
+
+@media (max-width: 480px) {
+  .yf2-formulario {
+    padding: 28px 24px;
+  }
+
+  .yf2-bienvenida h2 {
+    font-size: 32px;
+  }
+}
+
+
+
+/* YANFITNESS V2.0 - CHECKBOX Y TIPOGRAFÍA */
+
+.yf2-recordar {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: #9daed0 !important;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.yf2-recordar span {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: 400 !important;
+  color: inherit !important;
+}
+
+/* Casilla oscura con borde gris */
+.yf2-recordar input[type="checkbox"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid #6b7280 !important;
+  border-radius: 3px !important;
+  background: #262626 !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Cuando se marca */
+.yf2-recordar input[type="checkbox"]:checked {
+  background: #3077ff !important;
+  border-color: #3077ff !important;
+}
+
+/* Marca blanca dentro del checkbox */
+.yf2-recordar input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.yf2-recordar input[type="checkbox"]:focus-visible {
+  outline: 2px solid #60a5fa !important;
+  outline-offset: 3px;
+}
+
+
+
+/* YANFITNESS V2.0 - OLVIDÉ MI CONTRASEÑA */
+
+.yf2-password-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.yf2-password-encabezado label {
+  font-family: Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+
+.yf2-olvide {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #3077ff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.yf2-olvide:hover {
+  color: #60a5fa;
+  text-decoration: underline;
+}
+
+.yf2-olvide:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 3px;
+}

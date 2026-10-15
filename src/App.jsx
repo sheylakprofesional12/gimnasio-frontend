@@ -10,7 +10,15 @@ import Reportes from "./pantallas/Reportes";
 
 function App() {
 
-  const [usuario, setUsuario] = useState(null);
+const [usuario, setUsuario] = useState(() => {
+  try {
+    const guardado = localStorage.getItem("yanfitness_usuario");
+    return guardado ? JSON.parse(guardado) : null;
+  } catch {
+    localStorage.removeItem("yanfitness_usuario");
+    return null;
+  }
+});
   const [pantallaActual, setPantallaActual] = useState("inicio");
 
   const iniciarSesion = (datosUsuario) => {
@@ -19,9 +27,10 @@ function App() {
   };
 
   const cerrarSesion = () => {
-    setUsuario(null);
-    setPantallaActual("inicio");
-  };
+  localStorage.removeItem("yanfitness_usuario");
+  setUsuario(null);
+  setPantallaActual("inicio");
+};
 
   const irASocios = () => {
     setPantallaActual("socios");
